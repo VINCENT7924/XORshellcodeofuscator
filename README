@@ -1,0 +1,63 @@
+
+# XOR Shellcode Obfuscator
+
+## Description
+
+This tool is a **Python CLI script** designed to **obfuscate shellcode using XOR**, a common technique in offensive security used to evade basic signature-based detection mechanisms.
+
+The tool is intended to be used as **part of a payload chain**, where its role is to **prepare and obfuscate the shellcode** so that it can later be consumed by a **separate loader**, typically written in **C**, which is responsible for decrypting the shellcode in memory and executing it.
+
+This script **does not execute shellcode**. It only performs obfuscation and outputs the encrypted shellcode in multiple formats.
+
+---
+
+## Usage
+
+### General Syntax
+
+```bash
+python xorcrypt.py --in <input_file> --out <output_file> --key <key> --format <format>
+
+```
+
+## Command-Line Arguments
+
+| Flag | Description |
+|----|------------|
+| `--in` | Input file containing raw shellcode |
+| `--out` | Output file where encrypted shellcode will be written |
+| `--key` | XOR key (single-byte hex value or multi-byte string) |
+| `--format` | Output format: `raw`, `python`, or `c` |
+
+---
+
+## Examples
+
+### Example commands
+
+```bash
+
+XORshellcodeofuscator.py --in shellcode.bin --out encrypted.bin --key 4er4efre --format c
+
+XORshellcodeofuscator.py --in shellcode.bin --out encrypted.bin --key 0x22 --format python
+```
+
+### Output format Examples
+
+#### C format
+
+unsigned char buf[] = {0xa4, 0xf5, 0xe2, 0xa4, 0xf5, 0xf6, 0xe2, 0xf5, 0x05, 0xa5, 0x22, 0x8c, 0x4f, 0x66, 0x72, 0x65, 0x5c, 0x00, 0x1e, 0x58, 0x0a, 0x0e, 0x05, 0x0a, 0x46, 0x09, 0x16, 0x34, 0x65, 0x66, 0x72, 0xa9};
+
+#### Python format
+
+buf = [0xa4, 0xf5, 0xe2, 0xa4, 0xf5, 0xf6, 0xe2, 0xf5, 0x05, 0xa5, 0x22, 0x8c, 0x4f, 0x66, 0x72, 0x65, 0x5c, 0x00, 0x1e, 0x58, 0x0a, 0x0e, 0x05, 0x0a,0x46, 0x09, 0x16, 0x34, 0x65, 0x66, 0x72, 0xa9]
+
+
+
+
+
+
+
+
+
+

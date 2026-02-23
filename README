@@ -16,7 +16,7 @@ This script **does not execute shellcode**. It only performs obfuscation and out
 ### General Syntax
 
 ```bash
-python xorcrypt.py --in <input_file> --out <output_file> --key <key> --format <format>
+python XORshellofuscator.py --in <input_file> --out <output_file> --key <key> --format <format>
 
 ```
 

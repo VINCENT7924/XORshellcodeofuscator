@@ -3,11 +3,8 @@
 
 ## Description
 
-This tool is a **Python CLI script** designed to **obfuscate shellcode using XOR**, a common technique in offensive security used to evade basic signature-based detection mechanisms.
-
-The tool is intended to be used as **part of a payload chain**, where its role is to **prepare and obfuscate the shellcode** so that it can later be consumed by a **separate loader**, typically written in **C**, which is responsible for decrypting the shellcode in memory and executing it.
-
-This script **does not execute shellcode**. It only performs obfuscation and outputs the encrypted shellcode in multiple formats.
+This tool is a Python script designed to obfuscate shellcode using XOR, a common technique in offensive security used to evade basic signature-based detection mechanisms.The tool is intended to be used as part of a payload chain, where its role is to prepare and obfuscate the shellcode so that it can later be consumed by a separate loader, typically written in C+, which is responsible for decrypting the shellcode in memory and executing it.
+This script does not execute shellcode. It only performs obfuscation and outputs the encrypted shellcode in multiple formats.
 
 ---
 
@@ -16,7 +13,7 @@ This script **does not execute shellcode**. It only performs obfuscation and out
 ### General Syntax
 
 ```bash
-python XORshellofuscator.py --in <input_file> --out <output_file> --key <key> --format <format>
+python XORshellcodeofuscator.py --in <input_file> --out <output_file> --key <key> --format <format>
 
 ```
 
